@@ -1,4 +1,4 @@
-import { START_FETCH, FETCH_SUCCESS, FETCH_FAILURE, ADDING_SMURF, ADDING_SMURF_SUCCESS, ADDING_SMURF_FAILED } from '../components/actions'
+import { START_FETCH, FETCH_SUCCESS, FETCH_FAILURE, ADDING_SMURF, ADDING_SMURF_SUCCESS, ADDING_SMURF_FAILED, DELETE_FAILED, DELETE_SMURF } from '../components/actions'
 
 const initialState = {
     smurfs: [],
@@ -42,6 +42,13 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false
             }
+            case DELETE_SMURF:
+                    let newState = {...state}
+                    let smurfs = newState.smurfs.filter(smurf => smurf.id !== action.payload)
+                return {
+                    ...newState,
+                    smurfs
+                }
         default:
             return state;
     }
