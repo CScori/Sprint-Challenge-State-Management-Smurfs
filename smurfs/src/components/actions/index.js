@@ -23,8 +23,8 @@ export const addSmurf = (newSmurf) => dispatch => {
     axios
     .post('http://localhost:3333/smurfs')
     .then(res => {
-        console.log('fetch data', res)
-        dispatch({ type: ADDING_SMURF_SUCCESS, payload: res})
+        console.log('New Smurf', res.data)
+        dispatch({ type: ADDING_SMURF_SUCCESS, payload: res.data})
     })
     .catch(err => dispatch({ type: ADDING_SMURF_FAILED, payload: err.response}))
 }

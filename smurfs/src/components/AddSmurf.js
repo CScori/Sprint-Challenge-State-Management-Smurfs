@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import {addSmurf} from './actions'
 
 const AddSmurf = (props) => {
-    const [smurfName, setSmurfName] = useState('')
-    const [smurfAge, setSmurfAge] = useState('')
-    const [smurfHeight, setSmurfHeight] = useState('')
-    const [newSmurf, SetNewSmurf] = useState({})
+    const [newSmurf, setNewSmurf] = useState({name: '', age: '', height: ''})
 
-    useEffect(() => {
-        props.addSmurf()
-  
-    }, [])
-    SetNewSmurf(smurfName, smurfAge, smurfHeight)
+    const handleChange = e => {
+        setNewSmurf({...newSmurf, [e.target.name]: e.target.value})
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault()
+        props.addSmurf(newSmurf)
+    }
     return (
         <div>
-            <form>
+            <form onSubmit = {handleSubmit}>
                 <input
                     name='name'
                     placeholder='smurf name'
-                    value={smurfName}
-                    onChange={e => setSmurfName(e.target.value)}
+                    type = 'text'
+                    onChange={handleChange}
                 />
                 <input
                     name='age'
                     placeholder='smurf age'
-                    value={smurfAge}
-                    onChange={e => setSmurfAge(e.target.value)}
+                    type = 'number'
+                    onChange={handleChange}
                 />
                 <input
                     name='height'
                     placeholder='smurf height'
-                    value={smurfHeight}
-                    onChange={e => setSmurfHeight(e.target.value)}
+                    type = 'text'
+                    onChange={handleChange}
                 />
-                <button onClick={e => props.addSmurf(newSmurf)}>Add Smurfs</button>
+                <button>Add Smurfs</button>
             </form>
         </div>
     )
