@@ -9,9 +9,16 @@ const Smurfs = (props) => {
         props.fetchData()
     }, [])
 
+    if (props.isFetching) {
+        return <h3>Loading the Tra La, La La La La</h3>
+    }
     return (
         <div>
-            <Smurf />
+            {props.error && <p>{props.error}</p>}
+            {props.smurfs.map(smurf => (
+                <Smurf key={smurf.id} smurf={smurf}/>
+            ))}
+            
         </div>
     )
 }
