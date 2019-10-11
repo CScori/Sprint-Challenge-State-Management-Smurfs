@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {addSmurf} from './actions'
 
 const AddSmurf = (props) => {
-    const [newSmurf, setNewSmurf] = useState({name: '', age: '', height: ''})
+    const [newSmurf, setNewSmurf] = useState({id: Date.now(), name: '', age: '', height: ''})
 
     const handleChange = e => {
         setNewSmurf({...newSmurf, [e.target.name]: e.target.value})
