@@ -35,7 +35,7 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 isFetching: false,
-                smurfs: [...state.smurfs, action.payload]
+                smurfs: [...state, action.payload]
             };
         case ADDING_SMURF_FAILED:
             return {
