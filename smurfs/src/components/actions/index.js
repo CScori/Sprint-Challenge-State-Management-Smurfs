@@ -7,7 +7,7 @@ export const FETCH_FAILURE = 'FETCH_FAILURE'
 export const fetchData = () => dispatch => {
     dispatch({ type: START_FETCH});
     axios
-    .get('')
+    .get('http://localhost:3333/smurfs')
     .then(res => {
         console.log('fetch data', res)
         dispatch({ type: FETCH_SUCCESS, payload: res})
