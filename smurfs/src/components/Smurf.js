@@ -7,8 +7,8 @@ const Smurf = (props) => {
     console.log('single smurf', props)
     return (
         <div >
-            <Row xs="2">
-                <Col sm="3" width='10%'>
+            <Row xs="3">
+                <Col  sm={{ size: 'auto', offset: 1 }}>
 
                     <Card body className="text-center" inverse color="primary" key={props.smurf.id}>
                         <CardTitle>{props.smurf.name}</CardTitle>

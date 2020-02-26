@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux';
 import {addSmurf} from './actions'
-import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
+import { Button, Modal, ModalHeader, ModalBody, ModalFooter, InputGroup, InputGroupAddon, InputGroupText, Input } from 'reactstrap';
 
 const AddSmurf = (props) => {
     //modal logic
@@ -34,6 +34,7 @@ const AddSmurf = (props) => {
         <ModalHeader color= 'info'toggle={toggle}>Let's Make a Smurf</ModalHeader>
         <ModalBody>
         <form onSubmit = {handleSubmit}>
+            
                 <input
                     name='name'
                     placeholder='smurf name'
