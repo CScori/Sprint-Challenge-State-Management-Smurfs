@@ -1,5 +1,9 @@
+
 .App {
   text-align: center;
+  color: azure;
+  object-fit: cover;
+  background-image: url('../omg/nature-forest-trees-park-38136.jpg');
 }
 
 .App-logo {
