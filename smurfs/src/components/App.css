@@ -1,5 +1,10 @@
+
 .App {
+  margin: auto;
   text-align: center;
+  color: azure;
+  object-fit: cover;
+  background-image: url('../omg/nature-forest-trees-park-38136.jpg');
 }
 
 .App-logo {
@@ -18,11 +23,12 @@
   font-size: 1.5em;
 }
 
-.App-intro {
-  font-size: large;
+input {
+  margin: 25px;
+  border-radius: 25px;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.row .row-cols-3 {
+  width: 200px;
 }
+
